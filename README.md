@@ -1,4 +1,4 @@
-# dark_and_light_theme
+# Dark and light Theme demo flutter project
 
 A new Flutter project.
 
