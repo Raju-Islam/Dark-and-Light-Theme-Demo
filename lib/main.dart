@@ -16,15 +16,13 @@ class MainApp extends StatelessWidget {
         create: (context) => ThemeProvider(),
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
-         return MaterialApp(
+          return MaterialApp(
             debugShowCheckedModeBanner: false,
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
             home: HomePage(),
           );
-         
-        }
-        );
+        });
   }
 }

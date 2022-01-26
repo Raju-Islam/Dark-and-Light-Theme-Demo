@@ -1,3 +1,4 @@
+import 'package:dark_and_light_theme/page/dashboard.dart';
 import 'package:dark_and_light_theme/provider/theme_provider.dart';
 import 'package:dark_and_light_theme/widget/changethmebutton_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,15 +14,32 @@ class HomePage extends StatelessWidget {
         : "LightTheme";
     return Scaffold(
       appBar: AppBar(
-        title: Text("Theme Mode Demo"),
+        title: const Text("Theme Mode Demo"),
         centerTitle: true,
-        actions: [
+        actions: const [
           ChangeThemeButtonWidget(),
         ],
       ),
-      body: Center(
-        child: Text('hallo $text!',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-      ),
+      body: Column(children: [
+        Text(
+          'hallo $text!',
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        const Text(
+          'Bangladesh',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Dashboard(),
+                ),
+              );
+            },
+            child: const Text('Next'))
+      ]),
     );
   }
 }
